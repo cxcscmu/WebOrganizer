@@ -30,6 +30,9 @@ from typing import Optional, List, Any, Dict, Tuple
 
 logger = logging.getLogger(__name__)
 
+torch.manual_seed(42)
+torch.cuda.manual_seed_all(42)
+
 
 @dataclass
 class ScriptArguments(TrainingArguments):
@@ -182,7 +185,7 @@ class SoftClassificationTrainer(Trainer):
         self.data_collator = DataCollator(self.args, self.tokenizer)
         self.compute_metrics = self.compute_soft_classification_metrics
 
-    def compute_loss(self, model, inputs, return_outputs=False, **kwargs):
+    def compute_loss(self, model, inputs, return_outputs=False):
         labels = inputs.pop("labels")
 
         outputs = model(**inputs)
@@ -197,19 +200,13 @@ class SoftClassificationTrainer(Trainer):
         predictions = np.argmax(logits, axis=-1)
         top_label = np.argmax(labels, axis=-1)
 
-        conf25_mask = (np.max(labels, axis=-1) > 0.25)
-        conf35_mask = (np.max(labels, axis=-1) > 0.35)
-        conf50_mask = (np.max(labels, axis=-1) > 0.50)
+        conf50_mask = (np.max(labels, axis=-1) > 0.5)
         conf75_mask = (np.max(labels, axis=-1) > 0.75)
 
         correct = (predictions == top_label)
 
         metrics = {
             "accuracy": correct.mean().item(),
-            "accuracy_conf25": correct[conf25_mask].mean().item(),
-            "proportion_conf25": conf25_mask.mean().item(),
-            "accuracy_conf35": correct[conf35_mask].mean().item(),
-            "proportion_conf35": conf35_mask.mean().item(),
             "accuracy_conf50": correct[conf50_mask].mean().item(),
             "proportion_conf50": conf50_mask.mean().item(),
             "accuracy_conf75": correct[conf75_mask].mean().item(),
@@ -218,25 +215,16 @@ class SoftClassificationTrainer(Trainer):
 
         for i in range(logits.shape[-1]):
             metrics[f"accuracy__{i}"] = (predictions == i)[top_label == i].mean().item()
-            metrics[f"accuracy_conf25__{i}"] = (predictions == i)[(top_label == i) & conf25_mask].mean().item()
-            metrics[f"accuracy_conf35__{i}"] = (predictions == i)[(top_label == i) & conf35_mask].mean().item()
             metrics[f"accuracy_conf50__{i}"] = (predictions == i)[(top_label == i) & conf50_mask].mean().item()
             metrics[f"accuracy_conf75__{i}"] = (predictions == i)[(top_label == i) & conf75_mask].mean().item()
 
-
         metrics["accuracy_label_average"] = sum([metrics[f"accuracy__{i}"] for i in range(logits.shape[-1])]) / logits.shape[-1]
-        metrics["accuracy_label_average_conf25"] = sum([metrics[f"accuracy_conf25__{i}"] for i in range(logits.shape[-1])]) / logits.shape[-1]
-        metrics["accuracy_label_average_conf35"] = sum([metrics[f"accuracy_conf35__{i}"] for i in range(logits.shape[-1])]) / logits.shape[-1]
         metrics["accuracy_label_average_conf50"] = sum([metrics[f"accuracy_conf50__{i}"] for i in range(logits.shape[-1])]) / logits.shape[-1]
         metrics["accuracy_label_average_conf75"] = sum([metrics[f"accuracy_conf75__{i}"] for i in range(logits.shape[-1])]) / logits.shape[-1]
 
-
-        metrics["accuracy_label_min"] = min([metrics[f"accuracy__{i}"] for i in range(logits.shape[-1]) if metrics[f"accuracy__{i}"] > 0])
-        metrics["accuracy_label_min_conf25"] = min([metrics[f"accuracy_conf25__{i}"] for i in range(logits.shape[-1]) if metrics[f"accuracy_conf25__{i}"] > 0])
-        metrics["accuracy_label_min_conf35"] = min([metrics[f"accuracy_conf35__{i}"] for i in range(logits.shape[-1]) if metrics[f"accuracy_conf35__{i}"] > 0])
-        metrics["accuracy_label_min_conf50"] = min([metrics[f"accuracy_conf50__{i}"] for i in range(logits.shape[-1]) if metrics[f"accuracy_conf50__{i}"] > 0])
-        metrics["accuracy_label_min_conf75"] = min([metrics[f"accuracy_conf75__{i}"] for i in range(logits.shape[-1]) if metrics[f"accuracy_conf75__{i}"] > 0])
-
+        metrics["accuracy_label_min"] = min([metrics[f"accuracy__{i}"] for i in range(logits.shape[-1])])
+        metrics["accuracy_label_min_conf50"] = min([metrics[f"accuracy_conf50__{i}"] for i in range(logits.shape[-1])])
+        metrics["accuracy_label_min_conf75"] = min([metrics[f"accuracy_conf75__{i}"] for i in range(logits.shape[-1])])
 
         return metrics
 
@@ -291,7 +279,7 @@ def main():
     if args.do_train:
         train_dataset = load(args.train_dataset)
 
-        config.num_labels = len(get_labels(train_dataset[0], args.label_field))
+        config.num_labels = 48 #len(get_labels(train_dataset[0], args.label_field))
 
     if args.do_eval:
         eval_dataset = {

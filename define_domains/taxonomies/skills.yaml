@@ -1,0 +1,241 @@
+system_template: |-
+  Your task is to classify the underlying skill demonstrated in web pages into one of the following 48 categories:
+  {choices}
+
+  Definition of Skill: A skill is an internal cognitive ability that strongly influences how likely a person is to answer a question correctly. It is a learned capacity to achieve predetermined results with maximum certainty. The stronger the skill, the higher the chance the person will respond accurately, even across different but related questions.
+  
+  Choose which skill from the above list is the best match for describing the expertise required to understand or generate the content on the web page. If the content has multiple skills, choose the one that is most prominent.
+  Remember to focus on the skill, and not the topic, e.g., a research paper about legal issues does not count as 'Legal and Regulatory Knowledge'.
+  The URL might help you understand the content. Avoid shortcuts such as word overlap between the page and the skill descriptions or simple patterns in the URL, for example .../tutorials/... may also occur for theoretical discussions or general information.
+  Start your response with the single-letter ID of the correct format followed by an explanation.
+template: |-
+  Consider the following web page:
+
+  URL: `{url}`
+  Content: ```
+  {text}
+  ```
+
+  Your task is to classify the underlying skill demonstrated in web pages into one of the following 48 categories:
+  {choices}
+
+  Definition of Skill: A skill is an internal cognitive ability that strongly influences how likely a person is to answer a question correctly. It is a learned capacity to achieve predetermined results with maximum certainty. The stronger the skill, the higher the chance the person will respond accurately, even across different but related questions.
+
+  Choose which skill from the above list is the best match for describing the expertise required to understand or generate the content on the web page. If the content has multiple skills, choose the one that is most prominent.
+  Remember to focus on the skill, and not the topic, e.g., a research paper about legal issues does not count as 'Legal and Regulatory Knowledge'.
+  The URL might help you understand the content. Avoid shortcuts such as word overlap between the page and the skill descriptions or simple patterns in the URL, for example .../tutorials/... may also occur for theoretical discussions or general information.
+  Start your response with the single-letter ID of the correct format followed by an explanation.
+choices:
+- |-
+  Reading Comprehension and Text Analysis
+   - The ability to understand, interpret, and extract meaning from written text across various genres and complexity levels
+   - Examples: analyzing literary works, understanding technical documentation, interpreting news articles, extracting key information from research papers
+- |-
+  Grammar and Syntax Knowledge
+   - Understanding of language structure, rules, and conventions that govern sentence formation and word relationships
+   - Examples: identifying subject-verb agreement errors, understanding passive vs. active voice, recognizing proper sentence construction
+- |-
+  Language Generation and Writing Skills
+   - The capacity to produce coherent, well-structured, and contextually appropriate written content
+   - Examples: crafting professional emails, writing creative stories, producing technical reports, generating marketing copy
+- |-
+  Logical Reasoning and Inference
+   - The ability to draw valid conclusions from given premises using systematic thinking processes
+   - Examples: solving syllogisms, drawing conclusions from data, identifying cause-and-effect relationships
+- |-
+  Critical Thinking and Analysis
+   - The skill of objectively evaluating information, arguments, and evidence to form reasoned judgments
+   - Examples: analyzing political rhetoric, evaluating research methodology, assessing the credibility of sources
+- |-
+  Causal and Temporal Reasoning
+   - Understanding relationships between cause and effect, as well as temporal sequences and time-based logic
+   - Examples: understanding historical causation, predicting outcomes based on actions, analyzing timelines
+- |-
+  Abstract Reasoning and Generalization
+   - The ability to identify patterns, relationships, and principles that apply across different contexts
+   - Examples: understanding mathematical principles, identifying universal themes in literature, applying lessons from one domain to another
+- |-
+  Mathematical and Arithmetic Operations
+   - Proficiency in basic and intermediate mathematical calculations and problem-solving
+   - Examples: performing calculations, solving word problems, working with ratios and proportions
+- |-
+  Statistical Analysis and Data Interpretation
+   - The ability to analyze numerical data, understand statistical concepts, and draw meaningful conclusions
+   - Examples: interpreting survey results, analyzing experimental data, understanding polling margins of error
+- |-
+  Algebraic and Advanced Mathematical Reasoning
+   - Proficiency in higher-level mathematical concepts including algebra, geometry, and calculus principles
+   - Examples: solving algebraic equations, understanding geometric relationships, working with mathematical models
+- |-
+  Information Extraction and Synthesis
+   - The skill of identifying, extracting, and combining relevant information from multiple sources
+   - Examples: research compilation, creating literature reviews, combining data from multiple reports
+- |-
+  Summarization and Paraphrasing
+   - The ability to condense information while preserving essential meaning and to restate content in different words
+   - Examples: creating executive summaries, rewording complex instructions, condensing long articles
+- |-
+  Pattern Recognition and Categorization
+   - The skill of identifying recurring themes, structures, or relationships and organizing information into meaningful groups
+   - Examples: classifying species, identifying market trends, recognizing linguistic patterns
+- |-
+  Question Formulation and Answering
+   - The ability to create meaningful questions and provide comprehensive, accurate responses
+   - Examples: conducting interviews, creating survey questions, providing customer support responses
+- |-
+  Scientific Knowledge and Understanding
+   - Comprehensive knowledge of scientific principles, methods, and findings across various scientific disciplines
+   - Examples: explaining natural phenomena, understanding experimental design, discussing scientific discoveries
+- |-
+  Medical and Healthcare Knowledge
+   - Specialized understanding of medical terminology, conditions, treatments, and healthcare systems
+   - Examples: explaining medical conditions, understanding treatment options, interpreting health information
+- |-
+  Legal and Regulatory Knowledge
+   - Understanding of legal principles, regulations, and procedures across various jurisdictions and practice areas
+   - Examples: understanding contract law, explaining legal procedures, interpreting regulations
+- |-
+  Cultural Awareness and Sensitivity
+   - Understanding and appreciation of diverse cultural backgrounds, customs, and perspectives
+   - Examples: understanding cultural holidays, recognizing communication styles, adapting content for different audiences
+- |-
+  Historical and Geographical Knowledge
+   - Comprehensive understanding of historical events, geographical features, and their interconnections
+   - Examples: explaining historical conflicts, understanding geographic influences on culture, connecting past and present events
+- |-
+  Technical and Programming Knowledge
+   - Understanding of technology concepts, programming languages, and technical systems
+   - Examples: explaining programming concepts, troubleshooting technical issues, understanding software architecture
+- |-
+  Database Operations and SQL
+   - Proficiency in database management systems and Structured Query Language for data manipulation
+   - Examples: writing SQL queries, designing database schemas, optimizing database performance
+- |-
+  Social and Emotional Intelligence
+   - The ability to understand and navigate social situations and emotional dynamics
+   - Examples: reading social situations, understanding group dynamics, facilitating team interactions
+- |-
+  Empathy and Perspective Taking
+   - The capacity to understand and share the feelings and viewpoints of others
+   - Examples: providing emotional support, understanding different viewpoints in conflicts, showing compassion
+- |-
+  Conversational Dynamics and Dialogue Management
+   - The skill of managing and facilitating effective conversations and discussions
+   - Examples: moderating discussions, maintaining conversation threads, managing group conversations
+- |-
+  Sentiment Analysis and Emotion Recognition
+   - The ability to identify and interpret emotional content and sentiment in text and communication
+   - Examples: analyzing customer feedback, understanding emotional tone in messages, identifying mood in writing
+- |-
+  Hate Speech and Offensive Language Detection
+   - The capability to identify harmful, discriminatory, or offensive language and content
+   - Examples: content moderation, identifying cyberbullying, recognizing discriminatory language
+- |-
+  Argument Analysis and Evaluation
+   - The skill of examining arguments for logical structure, validity, and persuasiveness
+   - Examples: evaluating debate arguments, analyzing persuasive essays, identifying weak reasoning
+- |-
+  Fact-Checking and Verification
+   - The ability to verify the accuracy of claims and information against reliable sources
+   - Examples: verifying news claims, checking statistical accuracy, identifying false information
+- |-
+  Coherence and Cohesion Assessment
+   - The skill of evaluating how well ideas connect and flow within text or communication
+   - Examples: editing for flow, improving paragraph organization, ensuring logical progression
+- |-
+  Contradiction and Entailment Recognition
+   - The ability to identify when statements contradict each other or when one statement logically follows from another
+   - Examples: identifying contradictory evidence, recognizing logical implications, spotting inconsistent arguments
+- |-
+  Creative Writing and Storytelling
+   - The ability to craft engaging narratives, develop characters, and create compelling fictional or creative content
+   - Examples: writing short stories, developing plot lines, creating engaging characters, crafting poetry
+- |-
+  Literary Analysis and Interpretation
+   - The skill of analyzing and interpreting literary works, including themes, symbols, and literary devices
+   - Examples: analyzing symbolism in novels, interpreting poetry, understanding literary movements
+- |-
+  Humor and Wordplay Recognition
+   - The ability to identify, understand, and appreciate various forms of humor and linguistic creativity
+   - Examples: understanding puns, recognizing sarcasm, appreciating satirical content, identifying witty remarks
+- |-
+  Negotiation and Conflict Resolution
+   - The skill of mediating disputes and finding mutually beneficial solutions to conflicts
+   - Examples: mediating workplace disputes, facilitating discussions, finding win-win solutions
+- |-
+  Decision Making and Judgment
+   - The ability to evaluate options, weigh pros and cons, and make sound decisions based on available information
+   - Examples: evaluating investment options, making strategic choices, weighing alternatives
+- |-
+  Memory and Factual Recall
+   - The capacity to store, retain, and retrieve factual information accurately
+   - Examples: recalling historical dates, remembering scientific facts, accessing learned vocabulary
+- |-
+  Attention to Detail and Precision
+   - The skill of noticing small but important elements and maintaining accuracy in work
+   - Examples: proofreading for errors, checking calculations, maintaining accuracy in data entry
+- |-
+  Error Detection and Correction
+   - The ability to identify mistakes, inconsistencies, and problems in various types of content or processes
+   - Examples: editing written work, debugging code, identifying calculation errors, spotting inconsistencies
+- |-
+  Sequential Processing and Ordering
+   - The skill of organizing information, events, or processes in logical temporal or hierarchical sequences
+   - Examples: organizing instructions, creating timelines, sequencing procedures, prioritizing tasks
+- |-
+  Data Processing and Manipulation
+   - The ability to work with large amounts of information, transforming and organizing it for analysis
+   - Examples: cleaning datasets, reformatting information, aggregating data, creating data visualizations
+- |-
+  Comparative Analysis and Evaluation
+   - The skill of examining similarities and differences between options, concepts, or alternatives
+   - Examples: comparing products, evaluating alternatives, analyzing competing theories, assessing options
+- |-
+  Relevance Assessment and Filtering
+   - The ability to determine what information is pertinent to a specific context or question
+   - Examples: selecting relevant research sources, filtering search results, identifying pertinent details
+- |-
+  Parts of Speech Recognition and Tagging
+   - The technical skill of identifying and categorizing words according to their grammatical functions
+   - Examples: identifying nouns, verbs, adjectives, understanding grammatical parsing, language processing
+- |-
+  Punctuation and Formatting Skills
+   - Proficiency in proper punctuation usage and document formatting conventions
+   - Examples: proper comma usage, citation formatting, document structure, style consistency
+- |-
+  Vocabulary and Lexical Knowledge
+   - Comprehensive understanding of word meanings, usage, and relationships across various domains
+   - Examples: understanding technical terminology, recognizing word relationships, using appropriate vocabulary
+- |-
+  Business and Financial Understanding
+   - Knowledge of business principles, financial concepts, and economic relationships
+   - Examples: understanding profit margins, interpreting financial statements, analyzing market trends
+- |-
+  Research and Knowledge Retrieval
+   - The skill of efficiently finding, accessing, and utilizing information from various sources
+   - Examples: conducting literature searches, using databases, evaluating source credibility, synthesizing research
+- |-
+  General Problem Solving
+   - The overarching ability to approach complex challenges systematically and develop effective solutions
+   - Examples: troubleshooting issues, developing solutions to complex challenges, systematic approach to unknown problems
+demonstrations: # All demonstrations from dclm-refinedweb/global-shard_01_of_10/local-shard_0_of_10/shard_00000000_processed.jsonl.zstd
+- url: http://abacus.bates.edu/cbb/indexf7a0.html?q=node/41
+  text: "A wealth of publications on the topic of plagiarism exists. To help you navigate or locate relevant resources, we have compiled a list of print and electronic resources.\n\nBibliography of Print Resources\n\nAltman, Ellen and Peter Hernon, eds. Research Misconduct: Issues, Implications, and Strategies. London: Ablex, 1997.\n\nAnderson, Judy. Plagiarism, Copyright Violation & Other Thefts of Intellectual\nProperty: An Annotated Bibliography\n. Jefferson, NC: McFarland 1998.\n\n\nBuranen, Lisa and Alice M. Roy, eds. Perspectives on Plagiarism and Intellectual Property in a postmodern world. Albany: SUNY Press, 2001.\n\nCQ Quarterly, \"Combating Plagiarism,\" 13:32 (2003): 773-796\n\nDecoo, Wilfried. Crisis on Campus: Confronting Academic Misconduct. Cambridge: MIT Press, 2002.\n\nA guide to academic misconduct that includes a concise history that situates the phenomenon in contemporary academic practice, describes its various phases, and offers advice on detection as well as avoidance.\n\nDunn, Lee and Chris Morgan, Sharon Parry, Meg O'Reilly. The Student Assessment Handbook: New Directions in Traditional and Online Assessment. London: Routledge Falmer, 2004.\n\nIncludes a discussion of lagiarism.\n\nHarris, Robert. The Plagiarism Handbook: Strategies for Preventing, Detecting, and Dealing with Plagiarism. Los Angeles: Pyrczak, 2001.\n\nHoward, Rebecca Moore. Standing in the Shadow of Giants: Plagiarists, Authors & Collaborators. Stanford, CT: Ablex 1999."
+  choice: "Information Extraction and Synthesis"
+  explanation: "This web page demonstrates the skill of Information Extraction and Synthesis. The content represents a curated bibliography where someone has systematically identified relevant resources on plagiarism from multiple sources, extracted key bibliographic information, and combined them into an organized, annotated list. The page explicitly states its purpose is to 'help you navigate or locate relevant resources' by compiling 'a list of print and electronic resources'."
+# - url: http://www.creazaeducation.com/cartoonist?goback=.gde_2845660_member_189359695
+#   text: "Make a Comic Strip!\n\n\nCreaza Cartoonist\n\n\n\n\n\n  • Here, you can cut, paste, and copy elements from a frame.\n\n  • Here, you will find functions for the frame.\n  • You can give the frame a name or a descriptive text under Properties.  The text can be the name of the frame, or part of your story, and becomes visible when you display or print out your cartoon.\n  • If you want to re-use a frame you have made, first, you select the frame you want to copy, then click Copy.\n  • Here, you can also delete a frame and create a new frame.\n\n  • Functions for drawing are activated when you select an element to work with.\n  • You can choose between several different bubbles, as well as free-hand drawing, ellipses, and squares.\n  • You can arrange elements in sequence, meaning that you can add depth to your cartoon by placing elements behind or in front of each other.\n  • When you have your characters and other elements in place, it can be a good idea to lock what you have done so far.  When you choose unlock, all elements will be unlocked at the same time.\n\n  • Here, you can work with the appearance of your text, lines, and bubbles.  You can choose thick or thin lines.  Your lines can have different line styles, and your bubbles can be in all kinds of colours and gradients.\n\n  • You can either click on the button for expression or click on the arrow to get an overview of alternative expressions you can choose from."
+#   choice: "Reading Comprehension and Text Analysis"
+#   explanation: "This web page contains instructional documentation for using the Creaza Cartoonist software to create comic strips. The content is structured as technical documentation that explains various features and functions of the software interface, including how to work with frames, drawing tools, text formatting, and visual elements."
+# - url: http://seanwes.com/tag/ideas/
+#   text: "Skip to Content\n\nYou decided to show up. “I’m going to do this thing,” you say to yourself. “I’m going to dedicate time every day to practicing hand lettering.”\n\nIt’s morning. You sit down at your desk in front of a blank page. The sun is just now starting to come through the blinds in the window. It’s casting a beam of light onto your fresh, white paper.\n\nBut there’s a problem: your mind is absolutely blank. You have no idea what to write. You look around frantically for inspiration, but nothing interesting stands out.\n\nWhat went wrong?\n\nWhen it comes to thinking of a concept or approach for a design project, it’s not all that hard to have a first idea. In fact, just about everyone does. When you hold a word association experiment, you find that when given a specific word or concept, people largely think of many of the same  Continue Reading »"
+#   choice: "Language Generation and Writing Skills"
+#   explanation: "This web page demonstrates creative and engaging writing skills through its narrative approach to discussing the creative process. The content uses storytelling techniques, vivid imagery ('The sun is just now starting to come through the blinds in the window. It's casting a beam of light onto your fresh, white paper'), and second-person perspective to draw readers into the scenario. The author crafts a compelling narrative that builds tension around the creative block problem, using descriptive language to set the scene and create an emotional connection with readers who may have experienced similar challenges."
+# - url: http://www.iris.edu/hq/news/story/first_earthscope_transportable_array_station_installed_in_virginia
+#   text: "First EarthScope Transportable Array Station Installed in Virginia\n\nEarthScope Transportable Array Station R58B in Mineral, Virginia.\n\nOn August 8, EarthScope installed its first seismic station in Mineral, Virginia, near the epicenter of last year's magnitude 5.8 earthquake. This Transportable Array station, R58B, is a complement to other seismic stations in the area and is capable of detecting small regional aftershocks as well as earthquakes of about magnitude 5 occurring anywhere in the world. Both a high-quality broadband seismometer and a strong motion accelerometer were installed. The station will operate for about 2.5 years. In Spring 2013, an additional 18 stations will be installed in Virginia when the Transportable Array blankets the Mid-Atlantic states. To view the the most recent 24-hour seismogram at Station R58B or any other operating EarthScope seismic station, click here.\n\n\nBecause of the station's proximity to Washington, DC, the installation was observed by a small group of visitors including the Virginia state geologist, geoscience researchers from James Madison University in Harrisonburg, Virginia, and staff from IRIS Headquarters."
+#   choice: "Scientific Knowledge and Understanding"
+#   explanation: "Understanding this content requires knowledge of seismology, geophysics, and scientific instrumentation. The page explains technical scientific concepts, describes scientific equipment and methods, and discusses a scientific research project. While the content is presented in accessible language, it fundamentally requires scientific literacy to comprehend"
+# - url: https://www.voyageairguitar.com/component/content/article/42/196-a-letter-from-voyage-air-ceo-jeff-cohen-
+#   text: "A Letter From Voyage-Air CEO Jeff Cohen\n\nA big thank you to all of the many fans of Voyage-Air Guitar! Your comments and well wishes are much appreciated. Our email boxes are stuffed with mail from people that want to either buy a guitar, invest in the company, or just tell us how cool our guitar really is.\n\nThank you also to the producers ofShark Tank! It is not an easy thing to edit a one hour negotiation between me and the Sharks into just a few minutes ofairtime. One point I'd like to clarify about the show was the actual deal on the table. For $1 million, I was offering the Sharks a 49% stake in a new company, not Voyage-Air Guitar. The new company would license the technology to build Voyage-Air type guitars to other guitar manufacturers. Voyage-Air Guitar would continue to build its brand and build and sell guitars just the way it does today! The nuances of this deal were a bit much for the producers to work into our short segment. But, the Sharks and I knew exactly what was on the table!\n\nWe accomplished our goal of demonstrating the benefits of the Voyage-Air Guitar to millions of people and we are getting an overwhelming response! If you like the idea of having a guitar that folds in half, fits in a backpack and can be carried everywhere you go, then I hope you'll consider buying one for yourself.\n\nBest regards,"
+#   choice: "Language Generation and Writing Skills"
+#   explanation: "This web page demonstrates the capacity to produce coherent, well-structured, and contextually appropriate written content. The CEO's letter exhibits professional business writing skills through its clear organization, appropriate tone for the audience (fans and customers), and effective communication of complex business information. The letter demonstrates the ability to craft professional correspondence that serves multiple purposes: thanking customers, clarifying misconceptions from a TV appearance, and promoting the product. The writing is well-structured with logical flow between paragraphs, maintains a consistent professional yet approachable tone, and effectively communicates business concepts in an accessible way."

@@ -231,7 +231,7 @@ def load_dataframe(shard_name: Path,
 
     if options.domains_dir is not None:
         for i, domains_dir in enumerate(options.domains_dir):
-            domains = np.load(base_dir / domains_dir / (shard_name + options.domain_suffix[i]))
+            domains = np.load(base_dir / domains_dir / (f"{shard_name}_skill" + options.domain_suffix[i]))
             df[("domains", i)] = domains  # Use integer column names for domains
 
     return df

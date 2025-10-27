@@ -1,2 +1,11 @@
 __pycache__/
 .DS_Store
+define_domains/checkpoints
+define_domains/datasets
+define_domains/slurm
+define_domains/*.png
+slurm
+*.txt
+.env
+*.out
+

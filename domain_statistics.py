@@ -42,7 +42,7 @@ class DatasetOptions(Serializable):
     """
     input_base: Path = field(positional=True, help="Path to the input folder containing labels")
 
-    tokens_dir: Path = field(default="token_annotations", help="Relative to the output folder containing tokens")
+    tokens_dir: Path = field(default="tokens", help="Relative to the output folder containing tokens")
 
     domains_dir: List[Path] = field(help="Relative paths to the input folders containing domains", default=None)
 
@@ -61,7 +61,7 @@ def load_dataframe(shard_name: Path,
 
     if options.domains_dir is not None:
         for i, domains_dir in enumerate(options.domains_dir):
-            domains = np.load(options.input_base / domains_dir / (shard_name + options.domain_suffix[i]))
+            domains = np.load(options.input_base / domains_dir / (f"{shard_name}_skill" + options.domain_suffix[i]))
             df[("domains", i)] = domains  # Use integer column names for domains
 
     return df

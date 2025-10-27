@@ -1,0 +1,132 @@
+{
+  "Language Generation and Writing Skills": {
+    "tie": 12,
+    "wrong": 16,
+    "count": 28
+  },
+  "Reading Comprehension and Text Analysis": {
+    "tie": 2,
+    "wrong": 11,
+    "count": 13
+  },
+  "Data Processing and Manipulation": {
+    "tie": 0,
+    "wrong": 2,
+    "count": 2
+  },
+  "Abstract Reasoning and Generalization": {
+    "tie": 0,
+    "wrong": 1,
+    "count": 1
+  },
+  "Contradiction and Entailment Recognition": {
+    "tie": 0,
+    "wrong": 1,
+    "count": 1
+  },
+  "Conversational Dynamics and Dialogue Management": {
+    "tie": 1,
+    "wrong": 3,
+    "count": 4
+  },
+  "Information Extraction and Synthesis": {
+    "tie": 0,
+    "wrong": 2,
+    "count": 2
+  },
+  "Pattern Recognition and Categorization": {
+    "tie": 0,
+    "wrong": 5,
+    "count": 5
+  },
+  "Technical and Programming Knowledge": {
+    "tie": 4,
+    "wrong": 2,
+    "count": 6
+  },
+  "Sequential Processing and Ordering": {
+    "tie": 0,
+    "wrong": 3,
+    "count": 3
+  },
+  "Critical Thinking and Analysis": {
+    "tie": 3,
+    "wrong": 3,
+    "count": 6
+  },
+  "Coherence and Cohesion Assessment": {
+    "tie": 0,
+    "wrong": 2,
+    "count": 2
+  },
+  "Statistical Analysis and Data Interpretation": {
+    "tie": 0,
+    "wrong": 2,
+    "count": 2
+  },
+  "Argument Analysis and Evaluation": {
+    "tie": 0,
+    "wrong": 3,
+    "count": 3
+  },
+  "Comparative Analysis and Evaluation": {
+    "tie": 0,
+    "wrong": 3,
+    "count": 3
+  },
+  "Humor and Wordplay Recognition": {
+    "tie": 0,
+    "wrong": 1,
+    "count": 1
+  },
+  "General Problem Solving": {
+    "tie": 1,
+    "wrong": 1,
+    "count": 2
+  },
+  "Summarization and Paraphrasing": {
+    "tie": 0,
+    "wrong": 3,
+    "count": 3
+  },
+  "Business and Financial Understanding": {
+    "tie": 2,
+    "wrong": 2,
+    "count": 4
+  },
+  "Question Formulation and Answering": {
+    "tie": 1,
+    "wrong": 1,
+    "count": 2
+  },
+  "Historical and Geographical Knowledge": {
+    "tie": 0,
+    "wrong": 1,
+    "count": 1
+  },
+  "Medical and Healthcare Knowledge": {
+    "tie": 1,
+    "wrong": 1,
+    "count": 2
+  },
+  "Creative Writing and Storytelling": {
+    "tie": 0,
+    "wrong": 1,
+    "count": 1
+  },
+  "Vocabulary and Lexical Knowledge": {
+    "tie": 0,
+    "wrong": 1,
+    "count": 1
+  },
+  "Error Detection and Correction": {
+    "tie": 0,
+    "wrong": 1,
+    "count": 1
+  },
+  "Attention to Detail and Precision": {
+    "tie": 0,
+    "wrong": 1,
+    "count": 1
+  }
+}
